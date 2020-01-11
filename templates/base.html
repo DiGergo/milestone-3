@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico')}}">
+    
+    <title>...Sooo Good</title>
+</head>
+<body style= "background-color: #a4d1c8" >
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="{{url_for('get_home')}}" class="brand-logo waves-effect">...Soo Good</a>
+              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="waves-effect" href="{{url_for('get_categories')}}">Categories</a></li>
+                <li><a class="waves-effect" href="{{url_for('get_recipes')}}">Recipes</a></li>
+                <li><a class="waves-effect" href="{{url_for('get_shop')}}">Shop</a></li>
+                <li><a class="waves-effect" href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                <li><a href="{{url_for('get_categories')}}">Categories</a></li>
+                <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
+                <li><a href="{{url_for('get_shop')}}">Shop</a></li>
+                <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+              </ul>
+            </div>
+        </nav>
+    </header>
+    
+    
+    
+    {% block content %}
+        
+    {% endblock %}
+    
+    {% block footer %} 
+    
+    {% endblock %}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() { 
+            $('.collapsible').collapsible();
+            $('select').material_select();
+            $('.button-collapse').sideNav();
+        });
+    </script>    
+    
+</body>
+</html>
