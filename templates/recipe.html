@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+  <div class="row">
+    <div class="col s3 m4 back_to_recepies">
+      <a class="back-arrow" href="{{url_for('get_recipes')}}"><i class="fas fa-arrow-alt-circle-left"></i>  Back to recipes</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class=" recipe-name">
+      <h3 class="recipe_header">{{recipe.recipe_name}}</h3>
+    </div>
+  </div>
+    
+    
+    <div class="row">
+        <div class="col s6 m3">
+          <div class="card small">
+            <div class="card-image food-pic">
+              <img src="../static/images/table.jpg">
+            </div>
+            <div class="card-content">
+              <p class="card_text">This recipe was uploaded by : {{recipe.uploader}}</p>
+              <p><span class="far fa-clock"></span> {{recipe.time_to_prepare}} </p>
+            </div>
+          </div>
+        </div>
+        <div class="col s6 m9">
+           <h5>{{recipe.uploader}}'s comments : {{recipe.comments}}</h5> 
+          <div class="instructions">Instructions</div>
+            <p> {{recipe.instructions}}</p>
+          <div class="ingredients">Ingredients</div>  
+          <p> {{recipe.ingredients}}</p>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %} {% include 'includes/footer.html' %} {% endblock %}

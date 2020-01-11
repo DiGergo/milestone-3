@@ -1,0 +1,91 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row categories-row">
+    <div class="col s6 m4">
+      <div class="card large">
+        <div class="card-image food-pic">
+          <img class="food-picture" src="../static/images/fish.jpg">
+        </div>
+        <div class="card-content">
+          <p>Search here for some healthy, easy to make fish meals.</p>
+        </div>
+        <div class="card-action waves-effect">
+          <a href="{{url_for('get_fish')}}">Fish</a>
+        </div>
+      </div>
+    </div>
+  
+  <div class="col s6 m4">
+      <div class="card large">
+        <div class="card-image food-pic">
+          <img class="food-picture" src="../static/images/fruitpic.jpg">
+        </div>
+        <div class="card-content">
+          <p>Fancy a nice fruit salad? This is where you have to look for it!</p>
+        </div>
+        <div class="card-action waves-effect">
+          <a href="{{url_for('get_fruit')}}">Fruit</a>
+        </div>
+      </div>
+    </div>
+    
+  <div class="col s6 m4">
+      <div class="card large">
+        <div class="card-image food-pic">
+          <img class="food-picture" src="../static/images/pasta.jpg">
+        </div>
+        <div class="card-content">
+          <p>Would you enjoy some Italian pasta with white souce or red? Click here.</p>
+        </div>
+        <div class="card-action waves-effect">
+          <a href="{{url_for('get_pastas')}}">Pasta</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row categories-row">
+    <div class="col s6 m4">
+      <div class="card large">
+        <div class="card-image food-pic">
+          <img class="food-picture" src="../static/images/meat.jpg">
+        </div>
+        <div class="card-content">
+          <p>So you like more the meals with loooots of meat? This is your category.</p>
+        </div> 
+        <div class="card-action waves-effect">
+          <a href="{{url_for('get_meat')}}">Meat</a>
+        </div>
+      </div>
+    </div>
+  
+  <div class="col s6 m4">
+      <div class="card large">
+        <div class="card-image food-pic">
+          <img class="food-picture" src="../static/images/salad.jpg">
+        </div>
+        <div class="card-content">
+          <p>Green, healty, easy to make. Salads!!!</p>
+        </div>
+        <div class="card-action waves-effect">
+          <a href="{{url_for('get_salad')}}">Salad</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col s6 m4">
+      <div class="card large">
+        <div class="card-image food-pic">
+          <img class="food-picture" src="../static/images/dessert.jpg">
+        </div>
+        <div class="card-content">
+          <p>Who wouldn't eat some dessert???</p>
+        </div>
+        <div class="card-action waves-effect">
+          <a href="{{url_for('get_desserts')}}">Dessert</a>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %} {% include 'includes/footer.html' %} {% endblock %}
