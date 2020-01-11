@@ -82,6 +82,7 @@ def get_edit(recipe_id):
 @app.route('/update/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
+    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     recipe.update( {'_id': ObjectId(recipe_id)}, request.form.to_dict() )
     return render_template("recipes.html") 
 
