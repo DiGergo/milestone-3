@@ -73,8 +73,8 @@ def get_shop():
 
 @app.route('/edit/<recipe_id>')
 def get_edit(recipe_id):
-    the_recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('edit.html', recipe= the_recipe)
+    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+    return render_template('edit.html', recipe=recipe)
 
 @app.route('/update/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
