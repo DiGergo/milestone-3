@@ -35,7 +35,7 @@
     </div>
 
     <div class= "recipe-buttons">
-        <a class="waves-effect waves-light btn" onclick ="window.location='{{ url_for('get_edit')}} >Edit Recipe</a>
+        <a class="waves-effect waves-light btn" onclick ="window.location='{{ url_for('get_edit', recipe_id=recipe._id)}} >Edit Recipe</a>
         <a class="waves-effect waves-light btn">Delete</a>
     </div>
 
