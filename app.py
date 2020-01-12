@@ -85,13 +85,13 @@ def update_recipe(recipe_id):
     recipes.update( {'_id': ObjectId(recipe_id)},
     {
         'recipe_name': request.form.get('recipe_name'),
-        'category_name': request.form.get('category'),
-        'time_to_prepare': request.form.get('time'),
+        'category_name': request.form.get('category_name'),
+        'time_to_prepare': request.form.get('time_to_prepare'),
         'uploader': request.form.get('uploader'),
         'instructions': request.form.get('instructions'),
         'comments': request.form.get('comments'),
-        'costs': request.form.get('cost'),
-        'ingredients': request.form.get('ingredient_1')
+        'costs': request.form.get('costs'),
+        'ingredients': request.form.get('ingredients')
     })
     return render_template("categories.html", categories=mongo.db.categories.find())
 
