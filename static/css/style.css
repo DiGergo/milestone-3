@@ -166,7 +166,7 @@ a {
     font-size: 16px;
 }
 
-/* -------------------------------- Cooking tools */
+/* ---------------------------- Shop page */
 
 .cooking-tools-title {
     text-align: center;
@@ -179,7 +179,10 @@ a {
     text-align: center;
 }
 
-/* ---------------------------- Shop page */
+.shop-item{
+    height: 250px;
+    width: 300px;
+}
 
 .shop-header {
     text-align: center;
