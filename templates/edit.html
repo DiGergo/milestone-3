@@ -8,7 +8,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">poll</i>
                 <select id="category" name="category_name">
-                    <option value="" disabled selected>Choose Category</option>
+                    <option value="" disabled selected>{{recipe.category_name}}</option>
                         {% for category in categories %}
                             <option value="{{ category.category_name }}" >{{category.category_name}}</option>
                         {% endfor %}
@@ -27,7 +27,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">poll</i>
                 <select id="time" name="time_to_prepare">
-                    <option value="" disabled selected>Time to prepare</option>
+                    <option value="" disabled selected>{{recipe.time_to_prepare}}</option>
                         {% for time in time_to_prep %}
                             <option value="{{ time.time_to_prepare }}" >{{time.time_to_prepare}}</option>
                         {% endfor %}
@@ -67,7 +67,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">poll</i>
                 <select id="cost" name="costs">
-                    <option value="" disabled selected>The costs of this food</option>
+                    <option value="" disabled selected>{{recipe.costs}}</option>
                         {% for cost in cost %}
                             <option value="{{ cost.costs }}" >{{cost.costs}}</option>
                         {% endfor %}

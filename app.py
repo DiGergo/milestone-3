@@ -82,9 +82,17 @@ def get_edit(recipe_id):
 @app.route('/update/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
-    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    recipe.updateOne(request.form.to_dict())
-    return render_template("recipes.html") 
+    recipes.update( {'_id': ObjectId(recipe_id)},
+    {
+        'recipe_name': request.form.get('recipe_name'),
+        'category_name': request.form.get('category'),
+        'time_to_prepare': request.form.get('time'),
+        'uploader': request.form.get('uploader'),
+        'instructions': request.form.get('instructions'),
+        'comments': request.form.get('comments'),
+        'costs': request.form.get('cost'),
+        'ingredients': request.form.get('ingredient_1')
+    })
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipes():
