@@ -6,22 +6,6 @@
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method='POST' class="col s12">
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">poll</i>
-                <select id="category" name="category_name">
-                    <option value="" disabled selected>Choose Category</option>
-                        {% for category in categories %}
-                            {% if category.category_name == recipe.category_name %}
-                            <option value="{{ category.category_name }}" selected >{{category.category_name}}</option>
-                            {% else %}
-                            <option value="{{ category.category_name }}" >{{category.category_name}}</option>
-                        {% endif %}
-                        {% endfor %}
-                </select>
-                <label>Category</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
                 <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}">
                 <label for="icon_prefix">Recipe name</label>
@@ -29,54 +13,30 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">poll</i>
-                <select id="time" name="time_to_prepare">
-                    <option value="" disabled selected>{{recipe.time_to_prepare}}</option>
-                        {% for time in time_to_prep %}
-                            <option value="{{ time.time_to_prepare }}" >{{time.time_to_prepare}}</option>
-                        {% endfor %}
-                </select>
-                <label>Time to prepare</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="uploader" name="uploader" type="text" class="validate">
+                <input id="uploader" name="uploader" type="text" class="validate" value="{{recipe.uploader}}">
                 <label for="icon_prefix">{{recipe.uploader}}</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="ingredient_1" name="ingredients" type="text" class="validate">
+                <input id="ingredient_1" name="ingredients" type="text" class="validate" value="{{recipe.ingredients}}">
                 <label for="icon_prefix">{{recipe.ingredients}}</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="instructions" name="instructions" type="text" class="validate">
+                <input id="instructions" name="instructions" type="text" class="validate" value="{{recipe.instructions}}">
                 <label for="icon_prefix">{{recipe.instructions}}</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="comments" name="comments" type="text" class="validate">
+                <input id="comments" name="comments" type="text" class="validate" value="{{recipe.comments}}">
                 <label for="icon_prefix">{{recipe.comments}}</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">poll</i>
-                <select id="cost" name="costs">
-                    <option value="" disabled selected>{{recipe.costs}}</option>
-                        {% for cost in cost %}
-                            <option value="{{ cost.costs }}" >{{cost.costs}}</option>
-                        {% endfor %}
-                </select>
-                <label>{{recipe.costs}}</label>
             </div>
         </div>
         <div class="row">
