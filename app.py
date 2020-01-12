@@ -93,6 +93,7 @@ def update_recipe(recipe_id):
         'costs': request.form.get('cost'),
         'ingredients': request.form.get('ingredient_1')
     })
+    return render_template("categories.html", categories=mongo.db.categories.find())
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipes():
