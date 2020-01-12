@@ -82,7 +82,7 @@ def get_edit(recipe_id):
 @app.route('/update/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
-    recipes.update( {'_id': ObjectId(recipe_id)},
+    recipes.update({'_id': ObjectId(recipe_id)},
     {
         'recipe_name': request.form.get('recipe_name'),
         'category_name': request.form.get('category_name'),
@@ -93,6 +93,11 @@ def update_recipe(recipe_id):
         'costs': request.form.get('costs'),
         'ingredients': request.form.get('ingredients')
     })
+    return render_template("categories.html", categories=mongo.db.categories.find())
+
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return render_template("categories.html", categories=mongo.db.categories.find())
 
 @app.route('/insert_recipe', methods=['POST'])
