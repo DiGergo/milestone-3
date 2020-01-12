@@ -10,14 +10,14 @@
                 <select id="category" name="category_name">
                     <option value="" disabled selected>Choose Category</option>
                         {% for category in categories %}
-                            {% if categories.category_name == recipe.category_name %}
-                            <option value="{{ categories.category_name }}" selected >{{categories.category_name}}</option>
+                            {% if category.category_name == recipe.category_name %}
+                            <option value="{{ category.category_name }}" selected >{{category.category_name}}</option>
                             {% else %}
-                            <option value="{{ categories.category_name }}" >{{categories.category_name}}</option>
+                            <option value="{{ category.category_name }}" >{{category.category_name}}</option>
                         {% endif %}
                         {% endfor %}
                 </select>
-                <label>{{recipe.category_name}}</label>
+                <label>Category</label>
             </div>
         </div>
         <div class="row">
@@ -36,7 +36,7 @@
                             <option value="{{ time.time_to_prepare }}" >{{time.time_to_prepare}}</option>
                         {% endfor %}
                 </select>
-                <label>{{recipe.time_to_prepare}}</label>
+                <label>Time to prepare</label>
             </div>
         </div>
         <div class="row">
