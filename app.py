@@ -10,55 +10,66 @@ app.config["MONGO_URI"] = 'mongodb+srv://root2019:RooT20i9@myfirstcluster-2yjug.
 
 mongo = PyMongo(app)
 
+# route to home page
 @app.route('/')
 @app.route('/home')
 def get_home():
     return render_template("index.html")
 
+# route to categories page
 @app.route('/categories')
 def get_categories():
     return render_template("categories.html", categories=mongo.db.categories.find())
 
+# route to recipes page
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html", 
     recipes=mongo.db.recipes.find())
 
+# route to view one specific recipe
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
     the_recipe=mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html", recipe=the_recipe)
 
+# route for Dessert category
 @app.route('/get_desserts')
 def get_desserts():
     return render_template("recipes.html", 
     recipes=mongo.db.recipes.find({'category_name': 'Dessert'}))
-    
+
+# route for Fish category
 @app.route('/get_fish')
 def get_fish():
     return render_template("recipes.html", 
     recipes=mongo.db.recipes.find({'category_name': 'Fish'}))
-    
+
+# route for Pasta category
 @app.route('/get_pastas')
 def get_pastas():
     return render_template("recipes.html", 
     recipes=mongo.db.recipes.find({'category_name': 'Pasta'}))
 
+# route for Meat category
 @app.route('/get_meat')
 def get_meat():
     return render_template("recipes.html", 
     recipes=mongo.db.recipes.find({'category_name': 'Meat'}))
 
+# route for salads category
 @app.route('/get_salad')
 def get_salad():
     return render_template("recipes.html", 
     recipes=mongo.db.recipes.find({'category_name': 'Salad'}))
 
+# route for fruits category
 @app.route('/get_fruit')
 def get_fruit():
     return render_template("recipes.html", 
     recipes=mongo.db.recipes.find({'category_name': 'Fruit'}))
 
+# function that adds a recipe to the mongo database
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('add_recipe.html',
@@ -67,10 +78,12 @@ def add_recipe():
     time_to_prep=mongo.db.time_to_prep.find(),
     cost=mongo.db.cost.find())
 
+# route to shop page
 @app.route('/shop')   
 def get_shop():
     return render_template("shop.html")
 
+# function to edit a specific recipe, also loads the information from database
 @app.route('/edit/<recipe_id>')
 def get_edit(recipe_id):
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
@@ -79,6 +92,7 @@ def get_edit(recipe_id):
     time_to_prep=mongo.db.time_to_prep.find(),
     cost=mongo.db.cost.find() )
 
+# function to update that specific edited recipe
 @app.route('/update/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
@@ -95,11 +109,13 @@ def update_recipe(recipe_id):
     })
     return render_template("categories.html", categories=mongo.db.categories.find())
 
+# function to delete a specific recipe
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return render_template("categories.html", categories=mongo.db.categories.find())
 
+# function that adds a recipe to the database
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipes():
     recipes = mongo.db.recipes

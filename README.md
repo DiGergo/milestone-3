@@ -19,7 +19,7 @@ It's an easy way to store your recipes all in one place. To find new ones added 
 
 ### Research
 
-To create an easily understandable website I looked up a few sites with the similar topic and built my page in the similar way.
+To create an easily understandable website I looked up a few sites with the similar topic and built my site in the similar way.
 
 ## Features
 
@@ -34,6 +34,7 @@ To create an easily understandable website I looked up a few sites with the simi
 * User login and register. Now anyone can add/delete from the recipes which is a bit dangerous :) .
 * Add favourite buttons to the recipes, so when the user returns to the site can search by favourites.
 * Add a comment section to the recepies, so people can add addittional comments.
+* Shop page would need more improvements and data but because the lack of time I focused on the functionality of the site.
 
 ## Technologies Used 
 * Python 3
@@ -46,6 +47,8 @@ To create an easily understandable website I looked up a few sites with the simi
 * Heroku
 * Git 
 * FontAwesome
+* AWS Cloud9
+* gitpod
 
 ## Testing
 
@@ -63,4 +66,15 @@ To create an easily understandable website I looked up a few sites with the simi
 ## Deployment 
 
 * The webpage is deployed using Heroku web services.
-*
+* I used Github for version control and hosting page.
+
+## Credits 
+
+**Content** 
+The content of the page is entirely written by me.
+
+**Media**
+The pictures used on the website were found on google and they are not subject to copyright.
+
+**Acknowledgements**
+I would like to thank my mentor Seun Owonikoko for the help and guidance.
