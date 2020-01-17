@@ -2,11 +2,15 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from dotenv import load_dotenv
+from pathlib import Path  # python3 only
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'recipe_db'
-app.config["MONGO_URI"] = 'mongodb+srv://root2019:RooT20i9@myfirstcluster-2yjug.mongodb.net/recipe_db?retryWrites=true&w=majority'
+app.config["MONGO_DBNAME"] = os.getenv("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongo = PyMongo(app)
 
