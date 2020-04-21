@@ -134,9 +134,14 @@ a {
 
 /*-----------------------------Footer */
 
+.footer {
+    background-color: #537d91;
+    padding-top: 10px;
+}
 
 .social-links {
     text-align: center;
+    padding-top: 10px;
 }
 
 .social-links li a i {
@@ -180,11 +185,17 @@ a {
 }
 
 .shop-item{
-    height: 250px;
-    width: 300px;
+    width: 100%;
 }
 
 .shop-header {
     text-align: center;
     color: #fafafa;
+}
+
+.shop-card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
 }
