@@ -99,7 +99,6 @@ def get_edit(recipe_id):
 # function to update that specific edited recipe
 @app.route('/update/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
-    the_recipe=mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     recipes = mongo.db.recipes
     recipes.update({'_id': ObjectId(recipe_id)},
     {
@@ -112,6 +111,7 @@ def update_recipe(recipe_id):
         'costs': request.form.get('costs'),
         'ingredients': request.form.get('ingredients')
     })
+    the_recipe=mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html", recipe=the_recipe)
 
 # function to delete a specific recipe
