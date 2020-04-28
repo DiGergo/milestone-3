@@ -17,6 +17,8 @@
     
     <title>...Sooo Good</title>
 </head>
+<!--This is the base page, it's used for all the html pages as a template. 
+It saves time during the building of the website and also loading it. -->
 <body style= "background-color: #a4d1c8" >
     <header>
         <nav>
@@ -39,7 +41,7 @@
         </nav>
     </header>
     
-    
+    <!-- This is the block content, it can be different in all the html pages.-->
     
     {% block content %}
         
@@ -49,6 +51,7 @@
     
     {% endblock %}
     
+    <!-- The javascript code is at the bottom of the page, so it doesn't affect the loading time of the webpage.-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript">

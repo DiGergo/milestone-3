@@ -88,6 +88,7 @@ def get_shop():
     return render_template("shop.html")
 
 # function to edit a specific recipe, also loads the information from database
+# By clicking on the update recipe button it overrides the recipe in the database, then we are redirected to the new updated recipe page.
 @app.route('/edit/<recipe_id>')
 def get_edit(recipe_id):
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
