@@ -137,10 +137,6 @@ a {
 .footer {
     background-color: #537d91;
     padding-top: 10px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 }
 
 .social-links {
