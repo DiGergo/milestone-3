@@ -63,6 +63,10 @@ a {
     max-width: 100%;
 }
 
+.discount-image{
+    max-width: 80%;
+}
+
 /* ---------------------------------------Cards */
 
 .card.large {
@@ -93,16 +97,21 @@ a {
     width: 70%;
 }
 
+@media only screen and (max-width: 600px) {
+  .add-row {
+    width: 90%;
+  }
+
 .row-short{
     width: 40%;
 }
 
 .row {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 
 .card-margin{
-    margin-top:15px;
+    margin:15px 0px 15px 0px;
 }
 /* ------------------------------------ Recipe page */
 
