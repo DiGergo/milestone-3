@@ -3,7 +3,7 @@
 /* --------------------- Header */
 
 a {
-    color: #000000;
+    color: #fafafa;
 }
 
 .motto {
@@ -97,6 +97,13 @@ a {
     width: 40%;
 }
 
+.row {
+    margin-bottom: 0px;
+}
+
+.card-margin{
+    margin-top:15px;
+}
 /* ------------------------------------ Recipe page */
 
 .recipe-head{

@@ -1,4 +1,4 @@
-# Coockbook
+# Cookbook
 
 This website was created to help people store they recipes in one place. It's easy to use, you can add, update, remove and read other peoples recipes.
 I created this website as a showcase of the skills learned through the Fullstack Software Developer Course by Code Institute.
@@ -25,9 +25,11 @@ To create an easily understandable website I looked up a few sites with the simi
 
 ### Functionality
 
-* The user can browse from the recipes database, they can Add / Remove / Update recipes. The site is connected to MongoDB.
+* The user can browse from the recipes database, they can Add / Remove / Update recipes. 
+* The site is connected to MongoDB, so it can store the added recipes on a server.
 * The site is responsive and fully scalable.
-* With the search bar the user can easily find a recipe in the database
+* Recipes can be viewed by categories.
+* The website has a shop page which in the future will be used for purchasing goods.
 
 ### Features left to implement
 
@@ -52,19 +54,27 @@ To create an easily understandable website I looked up a few sites with the simi
 
 ## Testing
 
+* HTML and CSS codes were validated by W3C-tools.
 * The testing of the site was manually conducted. All the CRUD features work as expected.
 * The responsiveness of the site could be imporved, but is acceptable like this.
+* Manual testing was conducted by my friends and family members on different phones.
+
 **Ux Stories**
+
 * Adding recipes : Working as expected, all the data entered by the user is pushed to Mongo database.
 * Reading recipes : Working as expected, all the data previously entered is loading properly from tha database.
 * Editing recipes : Working as expected, the changes made by the user is then updated in the database.
 * Deleting recepies: Working as expected, the chosen recepe is deleted from the database.
+
 **Different Browsers**
+
 * I checked the site on the most popular browsers and they seem to be working good.
 * On phone screen should be a bit more adjusted, but it's working.
 
 ## Deployment 
 
+* To protect my passwords and personal data I placed my environment variables in a gitignore file.
+* After setting debug to false I made my last push to heroku and github. 
 * The webpage is deployed using Heroku web services.
 * I used Github for version control and hosting page.
 
